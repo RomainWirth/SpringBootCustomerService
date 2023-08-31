@@ -1,8 +1,12 @@
 package com.customer.microcustomerservice.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Customer {
+    @Id
     private int id;
     private String lastName;
     private String firstName;
