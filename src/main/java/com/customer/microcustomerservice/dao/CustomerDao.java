@@ -8,4 +8,5 @@ public interface CustomerDao {
     ArrayList<Customer> findAll();
     Customer findById(int id);
     Customer save(Customer customer);
+    Customer delete(int id);
 }

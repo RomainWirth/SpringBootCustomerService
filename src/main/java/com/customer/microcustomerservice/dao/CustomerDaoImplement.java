@@ -48,4 +48,11 @@ public class CustomerDaoImplement implements CustomerDao {
         customerList.add(customer);
         return customer;
     }
+
+    @Override
+    public Customer delete(int id) {
+        Customer customer = findById(id);
+        customerList.remove(customer);
+        return customer;
+    }
 }
