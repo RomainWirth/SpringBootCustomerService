@@ -4,38 +4,25 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="customer")
 public class Customer {
     @Id
-    @Column(name="customer_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Basic
-    @Column(name="customer_lastname")
     private String lastName;
-
-    @Basic
-    @Column(name="customer_firstname")
     private String firstName;
-
-    @Basic
-    @Column(name="customer_birthdate")
-    private Date birthDate;
-
-    @Basic
-    @Column(name="customer_drivinglicence")
-    private String drivingLicence;
+    private Date birthdate;
+    private String licenseId;
 
     public Customer() {
     }
 
-    public Customer(int id, String lastName, String firstName, Date birthDate, String drivingLicence) {
+    public Customer(int id, String lastName, String firstName, Date birthdate, String licenseId) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.birthDate = birthDate;
-        this.drivingLicence = drivingLicence;
+        this.birthdate = birthdate;
+        this.licenseId = licenseId;
     }
 
     public int getId() {
@@ -62,20 +49,20 @@ public class Customer {
         this.firstName = firstName;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getBirthdate() {
+        return birthdate;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthdate(Date birthDate) {
+        this.birthdate = birthDate;
     }
 
-    public String getDrivingLicence() {
-        return drivingLicence;
+    public String getLicenseId() {
+        return licenseId;
     }
 
-    public void setDrivingLicence(String drivingLicence) {
-        this.drivingLicence = drivingLicence;
+    public void setLicenseId(String drivingLicence) {
+        this.licenseId = drivingLicence;
     }
 
     @Override
@@ -84,8 +71,8 @@ public class Customer {
                 "id=" + id +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
-                ", birthDate=" + birthDate +
-                ", drivingLicence='" + drivingLicence + '\'' +
+                ", birthDate=" + birthdate +
+                ", drivingLicence='" + licenseId + '\'' +
                 '}';
     }
 }

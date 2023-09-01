@@ -24,7 +24,7 @@ public class CustomerController {
     @ApiOperation("Méthode pour ajouter un nouveau Customer")
     @PostMapping
     public @ResponseBody Customer addNewCustomer (@RequestBody Customer newCustomer) {
-        checkLicense(newCustomer.getDrivingLicence());
+        checkLicense(newCustomer.getLicenseId());
         return customerRepository.save(newCustomer);
     }
 
@@ -44,7 +44,7 @@ public class CustomerController {
     @ApiOperation("Méthode pour modifier les infos d'un client")
     @PutMapping
     public Customer updateCustomer(@RequestBody Customer customer) {
-        checkLicense(customer.getDrivingLicence());
+        checkLicense(customer.getLicenseId());
         return customerRepository.save(customer);
     }
 
