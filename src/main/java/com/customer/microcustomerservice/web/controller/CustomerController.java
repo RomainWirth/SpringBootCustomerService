@@ -1,7 +1,5 @@
 package com.customer.microcustomerservice.web.controller;
 
-
-import com.customer.microcustomerservice.dao.CustomerDao;
 import com.customer.microcustomerservice.model.Customer;
 import com.customer.microcustomerservice.repository.CustomerRepository;
 import io.swagger.annotations.Api;
