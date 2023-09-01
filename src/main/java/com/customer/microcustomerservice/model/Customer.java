@@ -1,16 +1,30 @@
 package com.customer.microcustomerservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name="customer")
 public class Customer {
     @Id
+    @Column(name="customer_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Basic
+    @Column(name="customer_lastname")
     private String lastName;
+
+    @Basic
+    @Column(name="customer_firstname")
     private String firstName;
+
+    @Basic
+    @Column(name="customer_birthdate")
     private Date birthDate;
+
+    @Basic
+    @Column(name="customer_drivinglicence")
     private String drivingLicence;
 
     public Customer() {
