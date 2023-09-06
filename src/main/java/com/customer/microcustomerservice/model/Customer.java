@@ -11,18 +11,20 @@ public class Customer {
 
     private String lastName;
     private String firstName;
-    private Date birthdate;
-    private String licenseId;
+    private Date birthDate;
+    private String licenceNumber;
+    private Date licenceDate;
 
     public Customer() {
     }
 
-    public Customer(int id, String lastName, String firstName, Date birthdate, String licenseId) {
+    public Customer(int id, String lastName, String firstName, Date birthDate, String licenceNumber, Date licenceDate) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.birthdate = birthdate;
-        this.licenseId = licenseId;
+        this.birthDate = birthDate;
+        this.licenceNumber = licenceNumber;
+        this.licenceDate = licenceDate;
     }
 
     public int getId() {
@@ -49,20 +51,28 @@ public class Customer {
         this.firstName = firstName;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthdate(Date birthDate) {
-        this.birthdate = birthDate;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public String getLicenseId() {
-        return licenseId;
+    public String getLicenceNumber() {
+        return licenceNumber;
     }
 
-    public void setLicenseId(String drivingLicence) {
-        this.licenseId = drivingLicence;
+    public void setLicenceNumber(String licenceNumber) {
+        this.licenceNumber = licenceNumber;
+    }
+
+    public Date getLicenceDate() {
+        return licenceDate;
+    }
+
+    public void setLicenceDate(Date licenceDate) {
+        this.licenceDate = licenceDate;
     }
 
     @Override
@@ -71,8 +81,9 @@ public class Customer {
                 "id=" + id +
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
-                ", birthDate=" + birthdate +
-                ", drivingLicence='" + licenseId + '\'' +
+                ", birthDate=" + birthDate +
+                ", licenceNumber='" + licenceNumber + '\'' +
+                ", licenceDate=" + licenceDate +
                 '}';
     }
 }

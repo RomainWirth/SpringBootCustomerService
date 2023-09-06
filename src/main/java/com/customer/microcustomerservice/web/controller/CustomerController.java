@@ -6,7 +6,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
@@ -24,7 +23,7 @@ public class CustomerController {
     @ApiOperation("Méthode pour ajouter un nouveau Customer")
     @PostMapping
     public @ResponseBody Customer addNewCustomer (@RequestBody Customer newCustomer) {
-        checkLicense(newCustomer.getLicenseId());
+        checkLicense(newCustomer.getLicenceNumber());
         return customerRepository.save(newCustomer);
     }
 
@@ -44,7 +43,7 @@ public class CustomerController {
     @ApiOperation("Méthode pour modifier les infos d'un client")
     @PutMapping
     public Customer updateCustomer(@RequestBody Customer customer) {
-        checkLicense(customer.getLicenseId());
+        checkLicense(customer.getLicenceNumber());
         return customerRepository.save(customer);
     }
 
