@@ -57,7 +57,7 @@ public class CustomerController {
     // méthode pour vérifier le numéro de permis de conduire
     public void checkLicense (String drivingLicence) {
         RestTemplate restTemplate = new RestTemplate();
-        Boolean isValid = restTemplate.getForObject("http://localhost:8091/licenses/" + drivingLicence, Boolean.class);
+        Boolean isValid = restTemplate.getForObject("http://localhost:9089/licenses/" + drivingLicence, Boolean.class);
         if (Boolean.FALSE.equals(isValid)) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Driving Licence Invalid"
