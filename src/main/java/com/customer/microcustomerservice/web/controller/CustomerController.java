@@ -34,7 +34,7 @@ public class CustomerController {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Client Existant"
             );
-        }else {
+        } else {
             isAgeValid(newCustomer.getBirthDate()); // vérificaton de l'âge
             if (isAgeValid(newCustomer.getBirthDate())) {
                 checkLicense(newCustomer.getLicenceNumber());
@@ -86,10 +86,14 @@ public class CustomerController {
     }
 
     public boolean isCustomerExistent (String licenceNumber) {
-        if (customerRepository.getLicenceNumber(licenceNumber) == licenceNumber) {
-            return true;
-        } else {
+        if (customerRepository.getLicenceNumber(licenceNumber) == null) {
             return false;
+        } else {
+            if (customerRepository.getLicenceNumber(licenceNumber).equals(licenceNumber)) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
