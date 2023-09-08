@@ -1,0 +1,5 @@
+com/customer/microcustomerservice/MicrocustomerserviceApplication.class
+com/customer/microcustomerservice/model/Customer.class
+com/customer/microcustomerservice/configuration/SwaggerConfig.class
+com/customer/microcustomerservice/repository/CustomerRepository.class
+com/customer/microcustomerservice/web/controller/CustomerController.class

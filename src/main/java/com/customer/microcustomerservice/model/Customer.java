@@ -12,17 +12,19 @@ public class Customer {
     private String lastName;
     private String firstName;
     private Date birthDate;
+    private String email;
     private String licenceNumber;
     private Date licenceDate;
 
     public Customer() {
     }
 
-    public Customer(int id, String lastName, String firstName, Date birthDate, String licenceNumber, Date licenceDate) {
+    public Customer(int id, String lastName, String firstName, Date birthDate, String email, String licenceNumber, Date licenceDate) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.birthDate = birthDate;
+        this.email = email;
         this.licenceNumber = licenceNumber;
         this.licenceDate = licenceDate;
     }
@@ -59,6 +61,14 @@ public class Customer {
         this.birthDate = birthDate;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getLicenceNumber() {
         return licenceNumber;
     }
@@ -82,6 +92,7 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", birthDate=" + birthDate +
+                ", email='" + email + '\'' +
                 ", licenceNumber='" + licenceNumber + '\'' +
                 ", licenceDate=" + licenceDate +
                 '}';
