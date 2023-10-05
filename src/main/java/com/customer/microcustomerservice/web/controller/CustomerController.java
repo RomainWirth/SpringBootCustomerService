@@ -22,6 +22,7 @@ import java.util.List;
 @RequestMapping("/customers")
 
 @Api("API pour les opérations CRUD sur les clients.")
+@CrossOrigin
 @RestController
 public class CustomerController {
     @Autowired
